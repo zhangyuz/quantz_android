@@ -1,0 +1,27 @@
+query IndexDailyQuery($before: String, $after: String, $first: Int, $last: Int, $amount: Float,$change: Float, $close: Float, $high: Float, $id: ID,$low: Float, $open: Float,$pctChg: Float, $preClose: Float, $tradeDate: String, $tsCode: String!, $vol: Float) {
+    indexDaily(before:$before, after:$after, first:$first, last:$last, amount:$amount,change:$change, close:$close, high:$high, id:$id,low:$low, open:$open,pctChg:$pctChg, preClose:$preClose, tradeDate:$tradeDate, tsCode:$tsCode, vol:$vol) {
+        edges {
+            node {
+                tsCode
+                tradeDate
+                open
+                high
+                low
+                close
+                change
+                pctChg
+                vol
+                amount
+                preClose
+            }
+            cursor
+        }
+        pageInfo {
+            startCursor
+            endCursor
+            hasNextPage
+            hasPreviousPage
+        }
+    }
+}
+
